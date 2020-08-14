@@ -15,7 +15,7 @@ export class UserService {
   }
 
   updateUser(user: User) {
-    const postUrl = 'http://localhost:8080/ChatApp_war_exploded/Controller?action=UpdateUser&voornaam=' + user.voornaam + '&naam=' + user.naam + '&age=' + user.leeftijd + '&geslacht=' + user.geslacht + '&email=' + user.email + '&userStatus=' + user.userStatus;
+    const postUrl = 'http://localhost:8080/ChatApp_war_exploded/Controller?action=EditUser&voornaam=' + user.voornaam + '&naam=' + user.naam + '&age=' + user.leeftijd + '&geslacht=' + user.geslacht + '&email=' + user.email + '&userStatus=' + user.userStatus;
     this.http.post(postUrl, null );
   }
 
