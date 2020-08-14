@@ -24,5 +24,6 @@ constructor(private userService: UserService) {}
   getUsers(): void{
     this.userService.getUsers()
       .subscribe(users => this.users = users);
+    alert(this.users);
   }
 }

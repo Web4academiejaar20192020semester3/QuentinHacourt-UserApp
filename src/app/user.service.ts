@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
-import { USERS } from './mock-users';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor() { }
+  private getUsersUrl = 'http://localhost:8080/ChatApp_war_exploded/Controller?action=GetUsers';
+  constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    return of(USERS);
+    return this.http.get<User[]>(this.getUsersUrl)
   }
 }
