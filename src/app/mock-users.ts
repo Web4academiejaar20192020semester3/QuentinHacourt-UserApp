@@ -1,14 +1,28 @@
 import { User } from './user';
 
 export const USERS: User[] = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  {
+      naam: 'stievens',
+      voornaam: 'stief',
+      email: 'stief@stiefmail.com',
+      geslacht: 'man',
+      leeftijd: '15',
+      userStatus: 'online'
+  },
+  {
+      naam: 'nelies',
+      voornaam: 'an',
+      email: 'an@ucll.be',
+      geslacht: 'vrouw',
+      leeftijd: '23',
+      userStatus: 'offline'
+  },
+  {
+      naam: 'romo',
+      voornaam: 'jan',
+      email: 'jan@ucll.be',
+      geslacht: 'man',
+      leeftijd: '25',
+      userStatus: 'away'
+  },
 ];

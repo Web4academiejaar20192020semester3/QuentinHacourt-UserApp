@@ -1,16 +1,49 @@
 <h2>My Users</h2>
 <ul class="users">
   <li *ngFor="let user of users" (click)="onSelect(user)">
-    <span class="badge">{{user.id}}</span> {{user.name}}
+      {{user.voornaam}} {{user.naam}}
+      <ul>
+           <li>
+                e-mail: {{user.email}}
+           </li>
+           <li>
+                geslacht: {{user.geslacht}}
+           </li>
+           <li>
+                leeftijd: {{user.leeftijd}}
+           </li>
+           <li>
+                status: {{user.userStatus}}
+           </li>
+      </ul>
   </li>
 </ul>
 
 <div *ngIf="selectedUser">
-  <h2>{{selectedUser.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedUser.id}}</div>
+  <h2>{{selectedUser.naam | uppercase}} Details</h2>
   <div>
-    <label>name:
-      <input [(ngModel)]="selectedUser.name" placeholder="name"/>
+    <label>Voornaam:
+      <input [(ngModel)]="selectedUser.voornaam" placeholder="voornaam"/>
+    </label>
+    <br/>
+    <label>Naam:
+      <input [(ngModel)]="selectedUser.naam" placeholder="naam"/>
+    </label>
+    <br/>
+    <label>e-mail:
+      <input [(ngModel)]="selectedUser.email" placeholder="email"/>
+    </label>
+    <br/>
+    <label>Geslacht:
+      <input [(ngModel)]="selectedUser.geslacht" placeholder="geslacht"/>
+    </label>
+    <br/>
+    <label>Leeftijd:
+      <input [(ngModel)]="selectedUser.leeftijd" placeholder="leeftijd"/>
+    </label>
+    <br/>
+    <label>Status:
+      <input [(ngModel)]="selectedUser.userStatus" placeholder="userStatus"/>
     </label>
   </div>
 </div>

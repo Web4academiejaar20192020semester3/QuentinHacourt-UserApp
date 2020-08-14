@@ -1,4 +1,8 @@
 export interface User {
-  id: number;
-  name: string;
+  naam: string;
+  voornaam: string;
+  email: string;
+  geslacht: string;
+  leeftijd: string;
+  userStatus: string;
 }
