@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +13,10 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.getUsersUrl)
   }
+
+  updateUser(user: User) {
+    const postUrl = 'http://localhost:8080/ChatApp_war_exploded/Controller?action=updateUser&voornaam=' + user.voornaam + '&naam=' + user.naam + '&age=' + user.leeftijd + '&geslacht=' + user.geslacht + '&email=' + user.email + '&userStatus=' + user.userStatus;
+    this.http.post(postUrl, null );
+  }
+
 }

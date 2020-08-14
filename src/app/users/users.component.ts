@@ -26,4 +26,8 @@ constructor(private userService: UserService) {}
       .subscribe(users => this.users = users);
     alert(this.users);
   }
+
+  updateUser(user: User): void {
+    this.userService.updateUser(user);
+  }
 }
